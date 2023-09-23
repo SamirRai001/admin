@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- title -->
+  <title>DASHBOARD. ALL ANALYSIS</title>
+
+  <!-- sass css -->
+  <link rel="stylesheet" href="assets/css/sass.css">
+
+  <!-- bootstrap css -->
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+
+  <!-- bootstrap icon css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!-- google fonts -->
+  <link rel="stylesheet" href="assets/css/fonts/kalam-font.css">
+  <link rel="stylesheet" href="assets/css/fonts/nunito-font.css">
+
+  <!-- font awasome -->
+  <link rel="stylesheet" href="assets/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">
+
+  <!-- master css -->
+  <link rel="stylesheet" href="assets/css/admin-master.css">
+
+  <!-- style css -->
+  <link rel="stylesheet" href="assets/css/dashboard.css">
+
+  <!-- lite mode css -->
+  <link rel="stylesheet" href="assets/css/lite-mode.css">
+
+</head>
+
+<body>
+  <!-- whole content holder starts -->
+  <div id="wrapper">
+
+    <!-- sidebar starts -->
+    <aside id="left-sidebar-wrapper">
+      <div class="sidebar-brand">
+        <h2>Smart Montessori</h2>
+        <hr>
+        <div id="accordian" class="menu-parent">
+          <ul class="sidebar-nav">
+            <li class="active menu-child">
+              <a href="index.html"><i class="bi bi-grid-fill bootstrap-icon sidebar-link-icon"></i>Dashboard</a>
+              <ul>
+                <li class="active-link"><a href="index.html"><i class="fa-solid fa-gauge sidebar-link-icon"></i>All
+                    Analysis</a></li>
+                <li><a href="#"><i class="fa-solid fa-user sidebar-link-icon"></i>Student
+                    Analysis</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <!-- sidebar endts -->
+
+    <!-- main content starts -->
+    <main id="whole-content-wrapper">
+
+      <!-- navbar starts -->
+      <div id="navbar-wrapper">
+        <nav class="navbar navbar-inverse">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a href="#" class="navbar-btn" id="left-sidebar-toggle"><i class="fa fa-bars"></i></a>
+              <span class="navbar-brand" style="margin-left: 10px;">DASHBOARD <i class="fa-solid fa-angle-right"></i>
+                ALL ANALYSIS</span>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" class="navbar-btn" id="right-sidebar-toggle"><i class="fa-solid fa-bell"></i></a></li>
+              <span class="notification-number"></span>
+            </ul>
+          </div>
+        </nav>
+        <hr>
+      </div>
+      <!-- navbar ends -->
+
+      <section id="content-wrapper">
+
+        <div class="row g-3">
+
+          <!-- Total Students Box -->
+          <div class="col-md-3">
+            <div class="card h-100 total-card">
+              <div class="card-body">
+                <div class="icon-title-holder">
+                  <div class="total-icon-holder students-icon">
+                    <i class="fas fa-users"></i>
+                  </div>
+                  <h5 class="total-card-title">Total Students</h5>
+                </div>
+                <p class="total-card-text">500</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Teachers Box -->
+          <div class="col-md-3">
+            <div class="card h-100 total-card">
+              <div class="card-body">
+                <div class="icon-title-holder">
+                  <div class="total-icon-holder teachers-icon">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                  <h5 class="total-card-title">Total Teachers</h5>
+                </div>
+                <p class="total-card-text">30</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Expenditure Box -->
+          <div class="col-md-3">
+            <div class="card h-100 total-card">
+              <div class="card-body">
+                <div class="icon-title-holder">
+                  <div class="total-icon-holder expenditure-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                  </div>
+                  <h5 class="total-card-title">Total Expenditure</h5>
+                </div>
+                <p class="total-card-text">20,000 Rs</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Revenue Box -->
+          <div class="col-md-3">
+            <div class="card h-100 total-card">
+              <div class="card-body">
+                <div class="icon-title-holder">
+                  <div class="total-icon-holder revenue-icon">
+                    <i class="fas fa-dollar-sign"></i>
+                  </div>
+                  <h5 class="total-card-title">Total Revenue</h5>
+                </div>
+                <p class="total-card-text">50,000 Rs</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row g-3" style="margin: 0px;">
+          <div class="col-md-6">
+            <div class="card h-100 student-graph-card">
+              <div class="card-body">
+                <h5 class="card-title">10 Years Report</h5>
+                <canvas id="studentCountChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card h-100 financial-graph-card">
+              <div class="card-body">
+                <h5 class="card-title">10 Years Financial Report</h5>
+                <canvas id="financialChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3" style="margin: 0px;">
+          <div class="col-md-8">
+            <div class="card h-100 student-graph-card">
+              <div class="card-body">
+                <h5 class="card-title">Total Student In Class</h5>
+                <canvas id="studentClassChart"></canvas>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 financial-graph-card">
+              <div class="card-body">
+                <h5 class="card-title">Student Gender</h5>
+                <canvas id="genderDoughnutChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+    </main>
+    <!-- main content ends -->
+
+    <!-- notificationbar starts -->
+    <aside id="right-sidebar-wrapper">
+      <div class="sidebar-brand">
+        <h2>Notification</h2>
+        <hr>
+      </div>
+      <div class="clear-all-button">
+        <button id="clear-all-btn">Clear All</button>
+      </div>
+      <div class="notification-box">
+        <div class="alert" style="background-color: var(--lightest-red);">
+          <strong>Action Failed !</strong>
+          <span class="notification-closebtn"><i class="fa-solid fa-xmark"></i></span>
+          <label>6:00 PM</label>
+        </div>
+        <div class="alert" style="background-color: var(--lightest-blue);">
+          <strong>Admin Login Successful</strong>
+          <span class="notification-closebtn"><i class="fa-solid fa-xmark"></i></span>
+          <label>6:00 PM</label>
+        </div>
+      </div>
+    </aside>
+    <!-- notificationbar ends -->
+
+  </div>
+  <!-- whole content holder ends -->
+</body>
+<!-- bootstrap js -->
+<script src="assets/js/source-js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/source-js/chart.js"></script>
+<script src="assets/js/source-js/jquery.min.js"></script>
+
+<!-- dashboard js -->
+<script src="assets/js/dashboard.js"></script>
+
+<script>
+  // Sample data for the doughnut chart (you can replace this with your own data)
+  var genderData = {
+    labels: ['Male', 'Female'],
+    datasets: [{
+      data: [60, 40], // Replace with your actual data
+      backgroundColor: [
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 99, 132, 0.5)',
+      ],
+      borderColor: [
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 99, 132, 1)',
+      ],
+      borderWidth: 1,
+    }]
+  };
+
+  // Create the doughnut chart with datalabels
+  var ctx = document.getElementById('genderDoughnutChart').getContext('2d');
+  var genderDoughnutChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: genderData,
+    options: {
+      plugins: {
+        legend: {
+          display: true,
+          position: 'bottom',
+        },
+        datalabels: {
+          color: '#fff', // Label text color
+          font: {
+            weight: 'bold', // Label font weight
+            size: 14, // Label font size
+          },
+          formatter: (value, ctx) => {
+            let sum = 0;
+            let dataArr = ctx.chart.data.datasets[0].data;
+            dataArr.map(data => {
+              sum += data;
+            });
+            let percentage = ((value / sum) * 100).toFixed(0) + "%";
+            return percentage;
+          },
+        },
+      },
+    },
+  });
+
+</script>
+<script>
+  // Sample data for the class chart (you can replace this with your own data)
+  var classData = {
+    labels: ['PG', 'Nursery', 'PG-1', 'PG-2', 'PS-1', 'PS-2', 'Class 3', 'Class 4', 'Class 5'],
+    datasets: [{
+      label: 'Number of Students',
+      data: [30, 45, 20, 55, 40, 60, 25, 35, 50], // Replace with your actual data
+      backgroundColor: 'rgba(54, 162, 235, 0.5)',
+      borderColor: 'rgba(54, 162, 235, 1)',
+      borderWidth: 1,
+    }]
+  };
+
+  // Create the class chart
+  var classCtx = document.getElementById('studentClassChart').getContext('2d');
+  var classChart = new Chart(classCtx, {
+    type: 'bar',
+    data: classData,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+        x: {
+          grid: {
+            display: false, // Hide X-axis grid lines
+          },
+        },
+        xAxes: [{
+          gridLines: {
+            display: false, // Remove the x-axis gridlines
+          },
+        }],
+        yAxes: [{
+          gridLines: {
+            display: false, // Remove the y-axis gridlines
+          },
+        }],
+      },
+      plugins: {
+        legend: {
+          display: false,
+        },
+      },
+    },
+  });
+</script>
+<script>
+  // Sample data for student enrollment by year
+  const studentData = {
+    labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+    datasets: [{
+      label: 'Total Students',
+      data: [150, 200, 250, 180, 220, 150, 200, 250, 180, 220], // Replace with your actual data
+      borderColor: 'rgba(75, 192, 192, 1)', // Line color
+      borderWidth: 2, // Line width
+      fill: true, // Fill area under the line
+      tension: 0.5, // Round line tension (0.5 for rounded lines)
+      backgroundColor: 'rgba(75, 192, 192, 0.2)', // Area under line color
+      pointRadius: 2, // Set point radius to 0 to remove the data points
+    }]
+  };
+
+  // Get the canvas element for the student chart
+  const studentCtx = document.getElementById('studentCountChart').getContext('2d');
+
+  // Create the student enrollment chart
+  const studentChart = new Chart(studentCtx, {
+    type: 'line', // Line chart
+    data: studentData,
+    options: {
+      scales: {
+        x: {
+          grid: {
+            display: false, // Hide X-axis grid lines
+          },
+        },
+        y: {
+          beginAtZero: true, // Start the Y-axis at 0
+          grid: {
+            display: false, // Hide Y-axis grid lines
+          },
+        },
+      },
+    },
+  });
+</script>
+
+<script>
+  // Sample data for Total Revenue and Total Expenditure by year
+  const financialData = {
+    labels: ['2014', '2015', '2016', '2017', '2018', '2019', '2020', '2021', '2022', '2023'],
+    datasets: [
+      {
+        label: 'Total Revenue',
+        data: [50000, 55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000], // Replace with your actual data for revenue
+        borderColor: 'rgba(255, 99, 132, 1)', // Line color for revenue
+        borderWidth: 2, // Line width
+        fill: true, // Fill area under the line
+        tension: 0.5, // Round line tension
+        backgroundColor: 'rgba(255, 99, 132, 0.2)', // Area under line color
+        pointRadius: 2, // Set point radius to 0 to remove data points
+      },
+      {
+        label: 'Total Expenditure',
+        data: [45000, 48000, 52000, 56000, 59000, 62000, 65000, 68000, 71000, 74000], // Replace with your actual data for expenditure
+        borderColor: 'rgba(54, 162, 235, 1)', // Line color for expenditure
+        borderWidth: 2, // Line width
+        fill: true, // Fill area under the line
+        tension: 0.5, // Round line tension
+        backgroundColor: 'rgba(54, 162, 235, 0.2)', // Area under line color
+        pointRadius: 2, // Set point radius to 0 to remove data points
+      },
+    ]
+  };
+
+  // Get the canvas element
+  const ctx2 = document.getElementById('financialChart').getContext('2d');
+
+  // Create the line chart for financial data
+  const financialChart = new Chart(ctx2, {
+    type: 'line', // Line chart
+    data: financialData,
+    options: {
+      scales: {
+        x: {
+          grid: {
+            display: false, // Hide X-axis grid lines
+          },
+        },
+        y: {
+          beginAtZero: true, // Start the Y-axis at 0
+          grid: {
+            display: false, // Hide Y-axis grid lines
+          },
+        },
+      },
+    },
+  });
+</script>
+
+</html>
